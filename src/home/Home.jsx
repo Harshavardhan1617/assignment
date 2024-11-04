@@ -7,7 +7,7 @@ export default function Home({ data }) {
     <div className="home">
       <div className="header">#Home</div>
       {data.map((category) => (
-        <Link key={crypto.randomUUID()} to={`/${category}`} state={category}>
+        <Link key={crypto.randomUUID()} to={`/${category}`}>
           <CategoryList name={category} />
         </Link>
       ))}
