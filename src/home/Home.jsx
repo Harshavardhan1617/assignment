@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Categories from "../categories/Categories";
+import CategoryList from "../category-list/CategoryList";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -10,7 +11,6 @@ export default function Home() {
       );
       const data = await response.json();
       setData(data);
-      console.log(data);
     };
     fetchData();
   }, []);
@@ -18,7 +18,9 @@ export default function Home() {
     <div className="home">
       <div className="header">#Home</div>
       {data.map((category) => (
-        <Categories key={crypto.randomUUID()} name={category} />
+        <Link key={crypto.randomUUID()} to={`/${category}`} state={category}>
+          <CategoryList name={category} />
+        </Link>
       ))}
     </div>
   );
