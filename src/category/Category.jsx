@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./Category.css";
 import { useEffect, useState } from "react";
 import Item from "../item/Item";
@@ -19,9 +19,11 @@ export default function Category() {
   return (
     <div className="category">
       <h2> {category} Products</h2>
-      {listItems.map((eachItem) => {
-        return <Item key={eachItem.id} item={eachItem} />;
-      })}
+      {listItems.map((eachItem) => (
+        <Link to={`/${category}/${eachItem.id}`} state={eachItem}>
+          <Item key={eachItem.id} item={eachItem} />
+        </Link>
+      ))}
     </div>
   );
 }
