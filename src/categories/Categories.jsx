@@ -1,3 +1,4 @@
-export default function Categories() {
-  return <div className="categories">#Categories</div>;
+export default function Categories({ name }) {
+  console.log(name);
+  return <div className="categories"> {name} </div>;
 }
