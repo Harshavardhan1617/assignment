@@ -1,0 +1,9 @@
+.categories {
+  display: inline-block;
+  height: 350px;
+  width: 280px;
+  background-color: #0077b6;
+  color: #fff;
+  margin: 12px 12px;
+  text-align: center;
+}
